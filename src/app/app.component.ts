@@ -1,3 +1,4 @@
+import { LoginService } from './services/login.service';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -9,15 +10,23 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'meutrampo';
-  showToolBar: boolean = true;
+  showToolBar: boolean = false;
 
   constructor(
+    private loginService: LoginService,
     private router: Router,
     private dialog: MatDialog
   ){}
 
+  ngOnInit(){
+    this.loginService.showToolBarEmitter.subscribe(
+      show => this.showToolBar = show
+    );
+  }
+
   onLogin() {
-    console.log('onLogin')
+    this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 
   onHome() {
