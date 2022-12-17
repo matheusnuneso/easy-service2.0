@@ -1,3 +1,59 @@
-<h1>aaaa</h1>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button class="button-home" mat-raised-button color="primary" (click)="onHome()">
+      MeuTrampo
+    </button>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+
+      <button *ngIf="showToolBar" mat-menu-item (click)="onServices()">
+        <mat-icon>design_services</mat-icon>
+        <span>Seus serviços</span>
+      </button>
+
+      <button *ngIf="showToolBar" mat-menu-item (click)="onContracts()">
+        <mat-icon>payments</mat-icon>
+        <span>Seus contratos</span>
+      </button>
+
+      <button *ngIf="showToolBar" mat-menu-item (click)="onPerfil()">
+        <mat-icon>person</mat-icon>
+        <span>Perfil</span>
+      </button>
+
+      <button *ngIf="showToolBar" mat-menu-item (click)="onLogin()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+
+      <button *ngIf="!showToolBar" mat-menu-item (click)="onLogin()">
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+      </button>
+
+    </mat-menu>
+
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="showToolBar">
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<mat-toolbar color="primary" class="footer">
+  <button *ngIf="showToolBar" style="position: fixed; right: 8px;" mat-raised-button color="accent" (click)="addJob()"> <mat-icon>add</mat-icon> Serviço</button>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
