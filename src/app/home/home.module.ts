@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
-    NavigationComponent
+    NavigationComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
