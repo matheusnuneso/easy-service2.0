@@ -11,7 +11,7 @@ export class AddJobComponent implements OnInit {
 
   jobForm = this.formBuilder.group({
     title: [''],
-    price: [0]
+    price: ['']
   });
 
   constructor(
