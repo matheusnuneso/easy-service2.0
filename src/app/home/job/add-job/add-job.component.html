@@ -1,0 +1,20 @@
+<h1 title mat-dialog-title>Novo Serviço</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="jobForm">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title" name="liveName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Preço final</mat-label>
+      <input matInput formControlName="price" name="channelName">
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createJob()">Salvar</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+</div>

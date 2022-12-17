@@ -1,3 +1,4 @@
+import { AddJobComponent } from './home/job/add-job/add-job.component';
 import { LoginService } from './services/login.service';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -46,7 +47,7 @@ export class AppComponent {
   }
 
   addJob() {
-    console.log('addJob')
+    this.dialog.open(AddJobComponent, { width: '300px' })
   }
 
 
