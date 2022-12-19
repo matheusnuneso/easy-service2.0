@@ -1,1 +1,58 @@
-<p>profile works!</p>
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Perfil</h1>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="example-form" [formGroup]="perfilForm">
+
+        <p>
+          <mat-form-field class="example-full-width">
+            <mat-label>Primeiro nome</mat-label>
+            <input matInput formControlName="fullName" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>CPF</mat-label>
+            <input matInput formControlName="cpf" required>
+          </mat-form-field>
+        </p>
+
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td><mat-form-field class="example-full-width">
+                <mat-label>Senha</mat-label>
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+                <mat-label>Confirmar senha</mat-label>
+                <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field></td>
+          </tr>
+        </table>
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button (click)="onBack()" mat-stroked-button style="margin-right: 10px;">Voltar</button>
+      <button class="updateButton" (click)="onUpdate()" mat-raised-button color="accent">Atualizar</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+</div>

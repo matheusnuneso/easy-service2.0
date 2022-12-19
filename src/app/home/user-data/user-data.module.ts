@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { SharedModule } from './../../shared/shared.module';
 
-import { UserDataRoutingModule } from './user-data-routing.module';
 import { ProfileComponent } from './profile/profile.component';
+import { UserDataRoutingModule } from './user-data-routing.module';
 import { UserJobsComponent } from './user-jobs/user-jobs.component';
 
 
@@ -13,7 +14,8 @@ import { UserJobsComponent } from './user-jobs/user-jobs.component';
   ],
   imports: [
     CommonModule,
-    UserDataRoutingModule
+    UserDataRoutingModule,
+    SharedModule
   ]
 })
 export class UserDataModule { }
