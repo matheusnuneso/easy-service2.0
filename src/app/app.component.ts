@@ -1,8 +1,8 @@
-import { AddJobComponent } from './home/job/add-job/add-job.component';
-import { LoginService } from './services/login.service';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AddJobComponent } from './home/job/add-job/add-job.component';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,8 @@ export class AppComponent {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private actRoute: ActivatedRoute
   ){}
 
   ngOnInit(){
@@ -35,7 +36,7 @@ export class AppComponent {
   }
 
   onPerfil() {
-    console.log('onPerfil')
+    this.router.navigate([this.router.url + '/profile']);
   }
 
   onContracts() {
