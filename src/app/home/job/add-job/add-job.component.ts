@@ -14,7 +14,7 @@ export class AddJobComponent implements OnInit {
 
   jobForm = this.formBuilder.group({
     title: [''],
-    price: ['']
+    price: [0]
   });
 
   constructor(
@@ -31,15 +31,23 @@ export class AddJobComponent implements OnInit {
   createJob(){
     var job = {
       title: this.jobForm.value.title,
-      price: Number(this.jobForm.value.price),
+      price: this.jobForm.value.price,
       idPerson: +this.utilsService.getParamUrl(2)
     }
 
-    this.jobService.saveJob(job)
-      .subscribe({
-        next: (n) => { this.createSuccess() },
-        error: (r) => { this.createError() }
-      })
+    if (
+      job.title === '' ||
+      job.price === 0
+    ) {
+      this.openSnackBar('Todos os campos obrigatórios devem ser preenchidos.')
+
+    } else {
+      this.jobService.saveJob(job)
+        .subscribe({
+          next: (n) => { this.createSuccess() },
+          error: (r) => { this.openSnackBar('Erro ao salvar serviço.') }
+        })
+    }
   }
 
   cancel(){
@@ -47,12 +55,12 @@ export class AddJobComponent implements OnInit {
   }
 
   createSuccess(){
-    this._snackBar.open('Serviço criado com sucesso', 'OK', { duration: 5000 })
+    this.openSnackBar('Serviço criado com sucesso')
     this.cancel()
   }
 
-  createError(){
-    this._snackBar.open('Erro ao salvar serviço.', 'OK', { duration: 5000 })
+  openSnackBar(message: string){
+    this._snackBar.open(message, 'OK', { duration: 5000 })
   }
 
 }
