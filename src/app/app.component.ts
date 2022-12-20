@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AddJobComponent } from './home/job/add-job/add-job.component';
 import { LoginService } from './services/login.service';
+import { UtilsService } from './services/utils.service';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,9 @@ export class AppComponent {
 
   constructor(
     private loginService: LoginService,
+    private utilsService: UtilsService,
     private router: Router,
-    private dialog: MatDialog,
-    private actRoute: ActivatedRoute
+    private dialog: MatDialog
   ){}
 
   ngOnInit(){
@@ -32,7 +33,9 @@ export class AppComponent {
   }
 
   onHome() {
-    console.log('onHome')
+    var id = this.utilsService.getParamUrl(2)
+    this.router.navigate(['/home', id])
+    this.utilsService.updateIndexNavigation(0)
   }
 
   onPerfil() {
@@ -40,7 +43,8 @@ export class AppComponent {
   }
 
   onContracts() {
-    console.log('onContracts')
+    this.onHome()
+    this.utilsService.updateIndexNavigation(1)
   }
 
   onServices() {

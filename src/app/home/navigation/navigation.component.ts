@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UtilsService } from './../../services/utils.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,8 +14,10 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     private actRoute: ActivatedRoute,
+    private utilsService: UtilsService
   ) {
     this.userId = this.actRoute.snapshot.params['id'];
+    this.utilsService.resultIndex$.subscribe(newIndex => this.selectedIndex = newIndex);
   }
 
   ngOnInit(): void {
