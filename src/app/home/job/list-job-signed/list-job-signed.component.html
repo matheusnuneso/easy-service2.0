@@ -1,0 +1,25 @@
+<div>
+  <mat-table [dataSource]="jobsSigned">
+    <!-- Job Column -->
+    <ng-container matColumnDef="job">
+      <mat-header-cell *matHeaderCellDef>Serviço</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.idJob }}</mat-cell>
+    </ng-container>
+
+    <!-- Client Column -->
+    <ng-container matColumnDef="client">
+      <mat-header-cell *matHeaderCellDef>Cliente</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.idClient }}</mat-cell>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="finalPrice">
+      <mat-header-cell *matHeaderCellDef>Preço Final</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.finalPrice }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+</div>

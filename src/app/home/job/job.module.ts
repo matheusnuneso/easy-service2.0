@@ -4,16 +4,21 @@ import { SharedModule } from './../../shared/shared.module';
 
 import { AddJobComponent } from './add-job/add-job.component';
 import { JobRoutingModule } from './job-routing.module';
+import { ListJobSignedComponent } from './list-job-signed/list-job-signed.component';
 
 
 @NgModule({
   declarations: [
-    AddJobComponent
+    AddJobComponent,
+    ListJobSignedComponent
   ],
   imports: [
     CommonModule,
     JobRoutingModule,
     SharedModule
+  ],
+  exports: [
+    ListJobSignedComponent
   ]
 })
 export class JobModule { }

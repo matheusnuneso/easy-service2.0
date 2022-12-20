@@ -1,0 +1,8 @@
+div{
+  padding: 3% 5%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 600px;
+}
