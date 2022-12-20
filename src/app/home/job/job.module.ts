@@ -5,12 +5,14 @@ import { SharedModule } from './../../shared/shared.module';
 import { AddJobComponent } from './add-job/add-job.component';
 import { JobRoutingModule } from './job-routing.module';
 import { ListJobSignedComponent } from './list-job-signed/list-job-signed.component';
+import { ListJobComponent } from './list-job/list-job.component';
 
 
 @NgModule({
   declarations: [
     AddJobComponent,
-    ListJobSignedComponent
+    ListJobSignedComponent,
+    ListJobComponent
   ],
   imports: [
     CommonModule,

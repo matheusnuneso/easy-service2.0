@@ -5,7 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: NavigationComponent },
-  { path: 'profile', loadChildren: () => import('./user-data/user-data.module').then(m => m.UserDataModule), canActivate: [AuthGuard] }
+  { path: 'profile', loadChildren: () => import('./user-data/user-data.module').then(m => m.UserDataModule), canActivate: [AuthGuard] },
+  { path: 'jobs', loadChildren: () => import('./job/job.module').then(m => m.JobModule), canActivate: [AuthGuard] }
 ];
 
 @NgModule({
