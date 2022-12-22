@@ -1,22 +1,18 @@
 .mat-card-job{
-  padding: 10px 0% 20px 0%;
-  margin: 5px;
-  width: 400;
-
+  background-color: #625f5f;;
+  padding: 10px 0% 10px 0%;
+  margin: 20px;
+  max-width: 30%;
+  height: 360px;
 }
 
 .mat-card-title-job{
-  padding-top: 0px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-bottom: 0px;
-  min-height:  70px;
+  padding: 10px;
   font-size: 1.3rem;
 }
 
 .mat-card-desc{
-  background-color: aliceblue;
-  max-width: 80%;
+  margin: 0px 10px;
   font-size: 1.0rem;
 }
 
@@ -30,6 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 95%;
+  margin: 0px;
 }
 
 #field-price{

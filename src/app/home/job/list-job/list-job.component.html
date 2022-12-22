@@ -1,29 +1,28 @@
-<div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;">
+<div fxLayout="row wrap" fxLayoutAlign="center center" style="padding: 2%;">
   <ng-container *ngFor="let job of listJobs" style="margin: 0.5%;">
 
     <mat-card class="mat-card-job"
       fxFlex="0 1 calc(33.3% - 11px)"
       fxFlex.lt-md="0 1 calc(50% - 11px)"
-      fxFlex.lt-sd="100%">
+      fxFlex.lt-sd="100%"
+      fxLayout="column" fxLayoutAlign="space-evenly center">
 
-      <mat-card-title class="mat-card-title-job">
-        <div class="row" style="height: 40px;">
+      <div fxLayout="row" fxLayoutAlign="space-evenly center" >
+        <mat-card class="mat-card-title-job" style="margin-right: 5%; width: 250px;">
+          <p>{{job.title}}</p>
+        </mat-card>
+        <mat-card class="mat-card-title-job">
+            <p>R${{job.price}}</p>
+        </mat-card>
+      </div>
 
-          <mat-card fxFlex="65%" fxLayoutAlign="start center" style="background-color: #607d8b; color: white;">{{job.title}}</mat-card>
-          <span fxFlex></span>
-
-          <mat-card id="field-price" style="background-color: #69f0ae; color: black;" fxFlex="30%" fxLayoutAlign="start center">R${{job.price}}</mat-card>
-
-        </div>
-      </mat-card-title>
-
-      <mat-card-content class="mat-card-content">
+      <div>
         <mat-card class="mat-card-desc">
-          <p style="color: black;">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis numquam beatae repudiandae repellat a exercitationem laboriosam? Qui sequi, dolorem laboriosam, odit nemo blanditiis eos ab rem aliquid ex veritatis doloremque?
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, veritatis quae impedit nisi eum doloribus sed fugiat itaque, animi corporis distinctio, a harum dicta. Asperiores porro voluptatum eius minus dolorem.
           </p>
         </mat-card>
-      </mat-card-content>
+      </div>
 
       <mat-card-actions class="mat-card-actions">
         <button fxFlex="44%" mat-stroked-button style="background-color: aliceblue; color: black;">Ver Trabalhador</button>
