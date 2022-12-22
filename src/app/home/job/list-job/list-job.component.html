@@ -25,8 +25,15 @@
       </div>
 
       <mat-card-actions class="mat-card-actions">
-        <button fxFlex="44%" mat-stroked-button style="background-color: aliceblue; color: black;">Ver Trabalhador</button>
-        <button fxFlex="44%" mat-raised-button color="accent" style="margin-right: 0px;">Contratar Serviço</button>
+        <button fxFlex="44%"
+                mat-stroked-button
+                style="background-color: aliceblue; color: black;"
+                (click)="onSeeWorker(job.idPerson)">Ver Trabalhador</button>
+
+        <button fxFlex="44%"
+                mat-raised-button color="accent"
+                style="margin-right: 0px;"
+                (click)="onContractJob(job)">Contratar Serviço</button>
       </mat-card-actions>
 
     </mat-card>

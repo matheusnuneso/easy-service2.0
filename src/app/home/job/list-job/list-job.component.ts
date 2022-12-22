@@ -1,3 +1,6 @@
+import { PersonService } from './../../../services/person.service';
+import { WorkerComponent } from './../../user-data/worker/worker.component';
+import { MatDialog } from '@angular/material/dialog';
 import { JobService } from './../../../services/job.service';
 import { Job } from './../../../models/job';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +15,9 @@ export class ListJobComponent implements OnInit {
   listJobs: Job[] = [];
 
   constructor(
-    private jobService: JobService
+    private personService: PersonService,
+    private jobService: JobService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +29,20 @@ export class ListJobComponent implements OnInit {
       .subscribe((data) => {
         this.listJobs = data
       })
+  }
+
+  onSeeWorker(idWorker: number){
+
+    this.personService.getPersonPerfil(idWorker).subscribe((resp) => {
+      this.dialog.open(WorkerComponent, {
+        width: '300px',
+        data: resp
+      })
+    })
+  }
+
+  onContractJob(job: Job){
+    console.log(job)
   }
 
 }
