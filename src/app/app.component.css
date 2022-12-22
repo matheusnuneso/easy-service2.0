@@ -20,4 +20,7 @@ mat-toolbar {
   z-index: 999;
 }
 
+.header-bar{
+  height: 15%;
+}
 

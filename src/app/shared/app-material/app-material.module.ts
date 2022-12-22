@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,7 +34,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     MatTableModule,
     MatTooltipModule,
     MatDialogModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    FlexLayoutModule
   ]
 })
 export class AppMaterialModule { }

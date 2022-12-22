@@ -1,0 +1,43 @@
+.mat-card-job{
+  padding: 10px 0% 20px 0%;
+  margin: 5px;
+  width: 400;
+
+}
+
+.mat-card-title-job{
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  min-height:  70px;
+  font-size: 1.3rem;
+}
+
+.mat-card-desc{
+  background-color: aliceblue;
+  max-width: 80%;
+  font-size: 1.0rem;
+}
+
+.mat-card-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-card-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#field-price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  font-size: 1.0rem;
+}

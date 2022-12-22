@@ -1,3 +1,5 @@
+import { JobService } from './../../../services/job.service';
+import { Job } from './../../../models/job';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListJobComponent implements OnInit {
 
-  constructor() { }
+  listJobs: Job[] = [];
+
+  constructor(
+    private jobService: JobService
+  ) { }
 
   ngOnInit(): void {
+    this.getJobs()
+  }
+
+  getJobs(){
+    this.jobService.getJobs()
+      .subscribe((data) => {
+        this.listJobs = data
+      })
   }
 
 }
