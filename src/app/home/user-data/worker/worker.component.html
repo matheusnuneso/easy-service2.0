@@ -1,1 +1,10 @@
-<p>worker works!</p>
+<mat-toolbar color="primary" fxLayoutAlign="center center" >
+  <span>Trabalhador</span>
+</mat-toolbar>
+
+<mat-card>Nome: {{fullName}}</mat-card>
+<mat-card>Email: {{email}}</mat-card>
+<mat-card>CPF: {{cpf}}</mat-card>
+<mat-card>UserName: {{userName}}</mat-card>
+
+<button class="example-full-width" mat-raised-button color="primary" (click)="onClose()">Fechar</button>

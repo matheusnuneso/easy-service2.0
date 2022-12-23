@@ -1,0 +1,17 @@
+.example-full-width {
+  width: 100%;
+}
+
+mat-toolbar{
+  margin-bottom: 15px;
+}
+
+mat-card{
+  background-color: #625f5f;
+  margin-bottom: 15px;
+  font-size: 1.0rem;
+}
+
+mat-card:hover{
+  background-color: #424242;
+}

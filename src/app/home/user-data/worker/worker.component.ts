@@ -1,5 +1,6 @@
+import { NonNullableFormBuilder } from '@angular/forms';
 import { Person } from './../../../models/person';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
@@ -9,10 +10,22 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class WorkerComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Person) { }
+  fullName = this.data.fullName;
+  email = this.data.email;
+  cpf = this.data.cpf;
+  userName = this.data.userName;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: Person,
+    public dialogRef: MatDialogRef<WorkerComponent>
+  ) { }
 
   ngOnInit(): void {
     console.log(this.data)
+  }
+
+  onClose(){
+    this.dialogRef.close();
   }
 
 }

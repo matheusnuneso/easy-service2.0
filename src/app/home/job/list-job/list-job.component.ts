@@ -35,7 +35,7 @@ export class ListJobComponent implements OnInit {
 
     this.personService.getPersonPerfil(idWorker).subscribe((resp) => {
       this.dialog.open(WorkerComponent, {
-        width: '300px',
+        width: '400px',
         data: resp
       })
     })
