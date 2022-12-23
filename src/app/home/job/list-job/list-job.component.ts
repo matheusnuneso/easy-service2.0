@@ -1,9 +1,10 @@
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { JobWithId } from './../../../models/job-with-id';
+import { JobService } from './../../../services/job.service';
 import { PersonService } from './../../../services/person.service';
 import { WorkerComponent } from './../../user-data/worker/worker.component';
-import { MatDialog } from '@angular/material/dialog';
-import { JobService } from './../../../services/job.service';
-import { Job } from './../../../models/job';
-import { Component, OnInit } from '@angular/core';
+import { BuyJobComponent } from './../buy-job/buy-job.component';
 
 @Component({
   selector: 'app-list-job',
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListJobComponent implements OnInit {
 
-  listJobs: Job[] = [];
+  listJobs: JobWithId[] = [];
 
   constructor(
     private personService: PersonService,
@@ -41,8 +42,11 @@ export class ListJobComponent implements OnInit {
     })
   }
 
-  onContractJob(job: Job){
-    console.log(job)
+  onContractJob(job: JobWithId){
+    this.dialog.open(BuyJobComponent, {
+      width: '400px',
+      data: job.id
+    })
   }
 
 }
