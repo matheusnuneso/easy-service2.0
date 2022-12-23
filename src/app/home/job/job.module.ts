@@ -6,13 +6,15 @@ import { AddJobComponent } from './add-job/add-job.component';
 import { JobRoutingModule } from './job-routing.module';
 import { ListJobSignedComponent } from './list-job-signed/list-job-signed.component';
 import { ListJobComponent } from './list-job/list-job.component';
+import { BuyJobComponent } from './buy-job/buy-job.component';
 
 
 @NgModule({
   declarations: [
     AddJobComponent,
     ListJobSignedComponent,
-    ListJobComponent
+    ListJobComponent,
+    BuyJobComponent
   ],
   imports: [
     CommonModule,
