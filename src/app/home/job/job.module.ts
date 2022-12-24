@@ -7,7 +7,7 @@ import { JobRoutingModule } from './job-routing.module';
 import { ListJobSignedComponent } from './list-job-signed/list-job-signed.component';
 import { ListJobComponent } from './list-job/list-job.component';
 import { BuyJobComponent } from './buy-job/buy-job.component';
-
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { BuyJobComponent } from './buy-job/buy-job.component';
   imports: [
     CommonModule,
     JobRoutingModule,
-    SharedModule
+    SharedModule,
+    MatNativeDateModule
   ],
   exports: [
     ListJobSignedComponent
