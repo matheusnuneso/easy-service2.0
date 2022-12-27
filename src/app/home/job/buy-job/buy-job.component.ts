@@ -38,12 +38,13 @@ export class BuyJobComponent implements OnInit {
   ngOnInit(): void {}
 
   onContract(){
-    const newDate = this.datepipe.transform(this.contractForm.value.date, 'dd/MM/yyyy')
+    const contractDate = this.datepipe.transform(this.contractForm.value.date, 'dd/MM/yyyy')
+    const jobDate = this.datepipe.transform(new Date(), 'dd/MM/yyyy')
 
-    if (newDate === null) {
+    if (contractDate === null || jobDate === null) {
       this._snackBar.open('É necessário inserir uma data.', 'OK', { duration: 5000 })
     } else {
-      this.jobSignedService.saveJobSigned(this.data, newDate)
+      this.jobSignedService.saveJobSigned(this.data, contractDate, jobDate)
     }
 
   }
