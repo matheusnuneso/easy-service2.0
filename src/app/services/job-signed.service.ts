@@ -1,3 +1,4 @@
+import { globalUrlApi } from './../../assets/global-variables';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JobWithId } from './../models/job-with-id';
@@ -8,8 +9,8 @@ import { UtilsService } from './utils.service';
   providedIn: 'root'
 })
 export class JobSignedService {
-  //private readonly APIurl = `${globalUrlApi}jobSigned`;
-  private readonly APIurl = "/assets/jobSigned.json";
+  private readonly APIurl = `${globalUrlApi}jobSigned`;
+  //private readonly APIurl = "/assets/jobSigned.json";
 
   constructor(
     private httpClient: HttpClient,
