@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DatePipe } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
@@ -20,8 +21,8 @@ export class BuyJobComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: number,
     public dialogRef: MatDialogRef<BuyJobComponent>,
     private formBuilder: NonNullableFormBuilder,
-    public datepipe: DatePipe
-
+    public datepipe: DatePipe,
+    private _snackBar: MatSnackBar
   ) {
 
     const currentYear = new Date().getFullYear();
@@ -36,7 +37,16 @@ export class BuyJobComponent implements OnInit {
   onContract(){
     const newDate = this.datepipe.transform(this.contractForm.value.date, 'dd/MM/yyyy')
 
-    console.log(newDate)
+    if (newDate === null) {
+      this._snackBar.open('É necessário inserir uma data.', 'OK', { duration: 5000 })
+    } else {
+      console.log(newDate)
+    }
+
+  }
+
+  onCancel(){
+    this.dialogRef.close();
   }
 
 }
