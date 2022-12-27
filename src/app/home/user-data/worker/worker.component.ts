@@ -1,7 +1,6 @@
-import { NonNullableFormBuilder } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Person } from './../../../models/person';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-worker',
@@ -20,9 +19,7 @@ export class WorkerComponent implements OnInit {
     public dialogRef: MatDialogRef<WorkerComponent>
   ) { }
 
-  ngOnInit(): void {
-    console.log(this.data)
-  }
+  ngOnInit(): void {}
 
   onClose(){
     this.dialogRef.close();

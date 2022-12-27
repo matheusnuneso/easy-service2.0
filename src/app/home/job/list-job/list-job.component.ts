@@ -45,7 +45,7 @@ export class ListJobComponent implements OnInit {
   onContractJob(job: JobWithId){
     this.dialog.open(BuyJobComponent, {
       width: '400px',
-      data: job.id
+      data: job
     })
   }
 

@@ -1,6 +1,7 @@
-import { JobSigned } from './../models/jobSigned';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { JobWithId } from './../models/job-with-id';
+import { JobSigned } from './../models/jobSigned';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,9 @@ export class JobSignedService {
 
   getJobSigned(){
     return this.httpClient.get<JobSigned[]>(this.APIurl);
+  }
+
+  saveJobSigned(job: JobWithId, date: string){
+
   }
 }

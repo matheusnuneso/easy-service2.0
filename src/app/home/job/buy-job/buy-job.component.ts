@@ -1,8 +1,10 @@
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { DatePipe } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { JobWithId } from './../../../models/job-with-id';
+import { JobSignedService } from './../../../services/job-signed.service';
 
 @Component({
   selector: 'app-buy-job',
@@ -18,11 +20,12 @@ export class BuyJobComponent implements OnInit {
   minDate: Date;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: number,
+    @Inject(MAT_DIALOG_DATA) public data: JobWithId,
     public dialogRef: MatDialogRef<BuyJobComponent>,
     private formBuilder: NonNullableFormBuilder,
     public datepipe: DatePipe,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private jobSignedService: JobSignedService
   ) {
 
     const currentYear = new Date().getFullYear();
@@ -40,7 +43,7 @@ export class BuyJobComponent implements OnInit {
     if (newDate === null) {
       this._snackBar.open('É necessário inserir uma data.', 'OK', { duration: 5000 })
     } else {
-      console.log(newDate)
+      this.jobSignedService.saveJobSigned(this.data, newDate)
     }
 
   }
