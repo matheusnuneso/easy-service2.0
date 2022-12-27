@@ -31,7 +31,5 @@ export class JobSignedService {
       jobDate: jobDate,
       contractDate: contractDate
     }
-
-    console.log(jobSigned)
   }
 }
