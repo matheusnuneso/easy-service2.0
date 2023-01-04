@@ -1,3 +1,4 @@
+import { UtilsService } from './../../../services/utils.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { JobWithId } from './../../../models/job-with-id';
@@ -18,7 +19,8 @@ export class ListJobComponent implements OnInit {
   constructor(
     private personService: PersonService,
     private jobService: JobService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private utilsService: UtilsService
   ) { }
 
   ngOnInit(): void {
@@ -26,9 +28,24 @@ export class ListJobComponent implements OnInit {
   }
 
   getJobs(){
+    const searchFilter = this.utilsService.getParamUrl(4).replace('%20', ' ')
+
     this.jobService.getJobs()
       .subscribe((data) => {
-        this.listJobs = data
+
+        if (searchFilter === 'all') {
+          this.listJobs = data
+
+        } else {
+
+          data.forEach(job => {
+            if (job.title.toLowerCase().includes(searchFilter)) {
+              this.listJobs.push(job)
+            }
+          });
+
+        }
+
       })
   }
 

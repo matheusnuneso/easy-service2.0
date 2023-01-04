@@ -17,7 +17,12 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch(searchFilter: string){
-    this.router.navigate(['jobs'], {relativeTo: this.actRoute})
+    if (searchFilter === '') {
+      searchFilter = 'all'
+    }
+
+    searchFilter = searchFilter.toLowerCase().trim()
+    this.router.navigate(['jobs/'+searchFilter], {relativeTo: this.actRoute})
   }
 
 }

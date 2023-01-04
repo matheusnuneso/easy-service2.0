@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListJobComponent } from './list-job/list-job.component';
 
 const routes: Routes = [
-  { path: '', component: ListJobComponent }
+  { path: ':jobSigned', component: ListJobComponent }
 ];
 
 @NgModule({
