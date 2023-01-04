@@ -15,7 +15,19 @@
     <!-- Price Column -->
     <ng-container matColumnDef="finalPrice">
       <mat-header-cell *matHeaderCellDef>Preço Final</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{ element.finalPrice }}</mat-cell>
+      <mat-cell *matCellDef="let element">R${{ element.finalPrice }}</mat-cell>
+    </ng-container>
+
+    <!-- jobDate Column -->
+    <ng-container matColumnDef="jobDate">
+      <mat-header-cell *matHeaderCellDef>Data do Serviço</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.jobDate }}</mat-cell>
+    </ng-container>
+
+    <!-- contractDate Column -->
+    <ng-container matColumnDef="contractDate">
+      <mat-header-cell *matHeaderCellDef>Data de Contratação</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.contractDate }}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

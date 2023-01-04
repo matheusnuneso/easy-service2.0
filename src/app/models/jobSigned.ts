@@ -4,4 +4,6 @@ export interface JobSigned {
   finalPrice: string
   idClient: string
   idProvider: number
+  jobDate: string
+  contractDate: string
 }

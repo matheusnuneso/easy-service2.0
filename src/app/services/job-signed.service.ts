@@ -19,7 +19,8 @@ export class JobSignedService {
   ) { }
 
   getJobSigned(){
-    return this.httpClient.get<JobSigned[]>(this.APIurl);
+    const id = this.utilsService.getParamUrl(2)
+    return this.httpClient.get<JobSigned[]>(`${this.APIurl}/user/${id}`);
   }
 
   saveJobSigned(job: JobWithId, contractDate: string, jobDate: string){
