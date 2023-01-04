@@ -38,19 +38,33 @@ export class BuyJobComponent implements OnInit {
   ngOnInit(): void {}
 
   onContract(){
-    const contractDate = this.datepipe.transform(this.contractForm.value.date, 'dd/MM/yyyy')
-    const jobDate = this.datepipe.transform(new Date(), 'dd/MM/yyyy')
+    const jobDate = this.datepipe.transform(this.contractForm.value.date, 'yyyy-MM-dd')
+    const contractDate = this.datepipe.transform(new Date(), 'yyyy-MM-dd')
 
     if (contractDate === null || jobDate === null) {
       this._snackBar.open('É necessário inserir uma data.', 'OK', { duration: 5000 })
     } else {
-      this.jobSignedService.saveJobSigned(this.data, contractDate, jobDate)
-    }
 
+      this.jobSignedService
+          .saveJobSigned(this.data, contractDate, jobDate)
+          .subscribe({
+            next: (n) => { this.createSuccess() },
+            error: (r) => { this.createError(r.error) }
+          })
+    }
   }
 
   onCancel(){
     this.dialogRef.close();
+  }
+
+  createSuccess(){
+    this.onCancel()
+    this._snackBar.open('Serviço contratado com sucesso!', 'OK', { duration: 5000 })
+  }
+
+  createError(message: string){
+    this._snackBar.open(message, 'OK', { duration: 5000 })
   }
 
 }

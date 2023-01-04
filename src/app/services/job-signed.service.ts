@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { globalUrlApi } from './../../assets/global-variables';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -32,5 +33,7 @@ export class JobSignedService {
       jobDate: jobDate,
       contractDate: contractDate
     }
+
+    return this.httpClient.post(this.APIurl, jobSigned, { observe: 'response' })
   }
 }
