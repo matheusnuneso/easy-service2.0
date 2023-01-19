@@ -1,27 +1,23 @@
-# EasyService20
+# Meu Trampo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+- Projeto onde é possível cadastrar serviços para que outra pessoa possa contrata-los
+- Também é possível contratar serviços cadastrados por outros usuários
 
-## Development server
+É possível acessar pelo link [MeuTrampo](https://meutrampo.vercel.app/login)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### Usuários disponíveis para teste:
 
-## Code scaffolding
+| Username | Senha |
+|----------|----------|
+| wallaceJr | 123 |
+| MatSobrinho | portao |
+| TheLittleJunior | agua123 |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Como rodar localmente
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Instale o [node](https://nodejs.org/en/download/) na versão 14 ou maior
+2. Clone o projeto
+3. Na pasta raiz do projeto rode o comando `npm install`
+4. Rode `ng version` para ter certeza que foi instalado corretamente
+5. Agora basta rodar `ng serve` e o projeto estará rodando localmente
+6. Para acessa-lo, entrar no link http://localhost:4200/
