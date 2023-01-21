@@ -35,6 +35,8 @@ export class JobSignedService {
       contractDate: contractDate
     }
 
+    console.log(jobSigned)
+
     return this.httpClient.post(this.APIurl, jobSigned, { observe: 'response' })
   }
 }

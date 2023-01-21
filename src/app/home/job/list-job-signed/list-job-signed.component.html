@@ -3,13 +3,13 @@
     <!-- Job Column -->
     <ng-container matColumnDef="job">
       <mat-header-cell *matHeaderCellDef>Serviço</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{ element.idJob }}</mat-cell>
+      <mat-cell *matCellDef="let element">{{ element.titleJob }}</mat-cell>
     </ng-container>
 
     <!-- Client Column -->
     <ng-container matColumnDef="client">
       <mat-header-cell *matHeaderCellDef>Cliente</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{ element.idClient }}</mat-cell>
+      <mat-cell *matCellDef="let element">{{ element.nameClient }}</mat-cell>
     </ng-container>
 
     <!-- Price Column -->

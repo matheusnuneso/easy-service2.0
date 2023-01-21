@@ -1,9 +1,8 @@
 export interface JobSigned {
   id: number
-  idJob: string
+  titleJob: string
   finalPrice: string
-  idClient: string
-  idProvider: number
+  nameClient: string
   jobDate: string
   contractDate: string
 }
