@@ -28,7 +28,7 @@ export class ListJobComponent implements OnInit {
   }
 
   getJobs(){
-    const searchFilter = this.utilsService.getParamUrl(4).replace('%20', ' ')
+    const searchFilter = this.utilsService.getParamUrl(4).replace(/%20/g, ' ')
 
     this.jobService.getJobs()
       .subscribe((data) => {
